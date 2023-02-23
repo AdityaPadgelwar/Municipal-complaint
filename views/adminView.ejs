@@ -1,0 +1,84 @@
+<%- include("partials/header") -%>
+    <div class="container">
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="post-table">
+                        <th>Complaint Id</th>
+                        <th>User Name</th>
+                        <th>Post Image</th>
+                        <th>Post Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i<complaintResult.length; i++){ %>
+                        <tr>
+                            <td>
+                                <%= complaintResult[i].complaint_id %>
+                            </td>
+                            <td>
+                                <%= complaintResult[i].user_first_name + " " + complaintResult[i].user_last_name %>
+
+                            </td>
+                            <td>
+                                <img src="<%= complaintResult[i].user_photo_reference %>"
+                                    alt=<%=complaintResult[i].user_first_name %>>
+
+                            </td>
+                            <td>
+                                <%= complaintResult[i].user_complaint_description.substring(0,100) %> <a target="_blank"
+                                        href="/complaints/<%= complaintResult[i].complaint_id %>">...Read More</a>
+
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="post-table">
+                        <th>Complaint Id</th>
+                        <th>User Name</th>
+                        <th>Post Image</th>
+                        <th>Post Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i<complaintResult.length; i++){ %>
+                        <tr>
+                            <td> 
+                                <%= complaintResult[i].complaint_id %>
+                            </td>
+                            <td> 
+                                <%= complaintResult[i].user_first_name + " " + complaintResult[i].user_last_name %>
+                                
+                            </td>
+                            <td> 
+                                       <img src="<%= complaintResult[i].user_photo_reference %>"
+                                       alt=<%=complaintResult[i].user_first_name %>>
+                                       
+                            </td>
+                            <td> 
+                                    <%= complaintResult[i].user_complaint_description %>
+                                
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div> -->
+
+    <!-- Jquery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- <script src='script.js'></script> -->
+    <script src="../../script/script.js"></script>
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>

@@ -1,0 +1,39 @@
+<%- include("partials/header") -%>
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td class="post"> <img src=<%=complaintResult.user_photo_reference %> alt=""> </td>
+                            <td>
+                                <strong>Name:</strong>
+                                <%= complaintResult.user_first_name + " " + complaintResult.user_last_name %>
+                                    <br>
+                                    <strong>Email:</strong>
+                                    <%= complaintResult.user_email %>
+                                        <br>
+                                        <strong>Contact:</strong>
+                                        <%= complaintResult.user_phone_number %>
+                                        <br>
+                                        <strong>Locality:</strong>
+                                        <%= complaintResult.user_locality %>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>Complaint Description:</h4>
+                                <p>
+                                    <%= complaintResult.user_complaint_description %>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer") -%>

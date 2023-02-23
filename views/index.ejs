@@ -1,0 +1,72 @@
+<%- include("partials/header") -%>
+    <div class="container">
+        <!-- Navbar Section -->
+
+
+        <!-- Mid Section -->
+        <div class="present-section">
+            <div class="present-title">
+                <h1 class="text1">Online </h1>
+                <h1 class="text2"><span>Complaint</span> Portal</h1>
+                <div>
+                    <span class="complaint-text">The only place where you complaints are precious to us!. If you have any complaint against the city management, you are at the right place.</span>
+                </div>
+                <br><a class="submit-complaint-btm" href="/registerComplaint">Submit Complaint</a>
+            </div>
+            <div class="present-image">
+                <img class="present-img" src="images/present-img.png" alt="">
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <!-- <div class="background-caraousel">
+
+
+            <div class="slideshow-container">
+                <% for(let i=0; i<complaintResult.length;i++){ %>
+
+                <div class="mySlides fade">
+<br><br><br>
+                    <span> <%= complaintResult[i].user_complaint_description.substring(0,100) %> </span>
+
+                </div>
+                <% } %>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+            </div>
+        </div> -->
+        <br>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+
+</body>
+
+</html>
